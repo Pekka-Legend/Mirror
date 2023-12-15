@@ -72,22 +72,14 @@ class Obstacle
             {
                 this.x = 800
                 this.y = Math.random() * 1150 - 600
-                if (this.x < 0)
+                if (this.y > -60 && this.y < 60)
                 {
-                    this.x = 800
                     this.y = Math.random() * 1150 - 600
-                    if (this.y > -60 && this.y < 60)
+                    while (this.y > -60 && this.y < 60)
                     {
                         this.y = Math.random() * 1150 - 600
-                        while (this.y > -60 && this.y < 60)
-                        {
-                            this.y = Math.random() * 1150 - 600
-                        }
                     }
                 }
-                SPEED += .1
-                score++
-            }
                 SPEED += .1
                 score++
             }
