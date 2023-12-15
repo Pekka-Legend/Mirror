@@ -49,21 +49,13 @@ class Obstacle
         this.y = y
         this.height = 600
         this.width = 25
-        if (this.y > 0 && this.y < 60)
+        if (this.y > -60 && this.y < 60)
         {
-            this.y = (Math.ceil(Math.random()) * 1150) - 600
-            while (this.y > 0 && this.y < 60)
+            this.y = Math.random() * 1150 - 600
+            while (this.y > -60 && this.y < 60)
             {
-                this.y = (Math.ceil(Math.random()) * 1150) - 600
+                this.y = Math.random() * 1150 - 600
             }
-        }
-        if (this.y < 0 && this.y > -60)
-        {
-            this.y = (Math.ceil(Math.random()) * 1150) - 600
-            while(this.y < 0 && this.y > -60)
-            {
-                this.y = (Math.ceil(Math.random()) * 1150) - 600
-            } 
         }
     }
     draw()
@@ -80,39 +72,22 @@ class Obstacle
             {
                 this.x = 800
                 this.y = Math.random() * 1150 - 600
-                if (this.y > 0 && this.y < 60)
+                if (this.x < 0)
                 {
+                    this.x = 800
                     this.y = Math.random() * 1150 - 600
-                    while (this.y > 0 && this.y < 60)
+                    if (this.y > -60 && this.y < 60)
                     {
                         this.y = Math.random() * 1150 - 600
-                        if (this.y < 0 && this.y > -60)
+                        while (this.y > -60 && this.y < 60)
                         {
                             this.y = Math.random() * 1150 - 600
-                            while(this.y < 0 && this.y > -60)
-                            {
-                                this.y = Math.random() * 1150 - 600
-                            } 
                         }
                     }
                 }
-                if (this.y < 0 && this.y > -60)
-                {
-                    this.y = Math.random() * 1150 - 600
-                    while(this.y < 0 && this.y > -60)
-                    {
-                        this.y = Math.random() * 1150 - 600
-                        if (this.y > 0 && this.y < 60)
-                        {
-                            this.y = Math.random() * 1150 - 600
-                            while (this.y > 0 && this.y < 60)
-                            {
-                                this.y = Math.random() * 1150 - 600
-                                
-                            }
-                        }
-                    } 
-                }
+                SPEED += .1
+                score++
+            }
                 SPEED += .1
                 score++
             }
